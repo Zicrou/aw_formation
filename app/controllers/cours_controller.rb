@@ -1,6 +1,7 @@
 class CoursController < ApplicationController
   before_action :set_cour, only: %i[ show edit update destroy ]
 
+  access [:all, :user] => [:index, :show, {except: [:destroy, :edit, :update, :new, :create]}], editor: [:index, :show, :edit, :update, :new, :create, :destroy], admin: :all
   # GET /cours or /cours.json
   def index
     @cours = Cour.all

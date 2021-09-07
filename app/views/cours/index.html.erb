@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Cours</h1>
-
+<%= current_user.role %>
 <table>
   <thead>
     <tr>
@@ -17,8 +17,8 @@
         <td><%= cour.title %></td>
         <td><%= cour.descriptin %></td>
         <td><%= link_to 'Show', cour %></td>
-        <td><%= link_to 'Edit', edit_cour_path(cour) %></td>
-        <td><%= link_to 'Destroy', cour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_cour_path(cour) if logged_in?(:admin, :editor) %></td>
+        <td><%= link_to 'Destroy', cour, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :editor) %></td>
       </tr>
     <% end %>
   </tbody>

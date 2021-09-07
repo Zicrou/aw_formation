@@ -4,6 +4,8 @@
   <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
   <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
 
+<%= link_to 'Edit', edit_cour_path(@cour) if logged_in?(:admin, :editor) %> |
+<%= link_to 'Back', cours_path %>
 <p>
   <strong>Formation:</strong>
   <%= @cour.formation.name %>
@@ -34,5 +36,3 @@
   </video>
 </p>
 
-<%= link_to 'Edit', edit_cour_path(@cour) %> |
-<%= link_to 'Back', cours_path %>
