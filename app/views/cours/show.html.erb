@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+
+<p>
+  <strong>Formation:</strong>
+  <%= @cour.formation.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @cour.title %>
+</p>
+
+<p>
+  <strong>Descriptin:</strong>
+  <%= @cour.descriptin %>
+</p>
+
+<p style="width:800px;height:800px;">
+<video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="100%"
+    height="auto"
+    poster="<%= url_for(@cour.thumbnail)%>"
+    data-setup="{}"
+  >
+    <source src="<%= url_for(@cour.video) %>" type="video/mp4" />
+  </video>
+</p>
+
+<%= link_to 'Edit', edit_cour_path(@cour) %> |
+<%= link_to 'Back', cours_path %>

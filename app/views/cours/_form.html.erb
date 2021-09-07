@@ -1,0 +1,48 @@
+<%= form_with(model: cour, local: true) do |form| %>
+  <% if cour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cour.errors.count, "error") %> prohibited this cour from being saved:</h2>
+
+      <ul>
+      <% cour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :formation_id %>
+    <%= form.collection_select(:formation_id, Formation.all, :id, :name,
+        {
+          include_blank: true
+        },
+        class: 'form-control',
+      ) 
+    %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descriptin %>
+    <%= form.text_area :descriptin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :video %>
+    <%= form.file_field :video %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumbnail %>
+    <%= form.file_field :thumbnail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
