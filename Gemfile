@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.8'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+gem 'jquery-rails'
