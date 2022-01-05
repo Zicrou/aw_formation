@@ -11242,12 +11242,11 @@ main {
 * 
 * GENERAL HEADER
 * gray color #E2F4F1
+* orange color #FF7000;
 */
 
 .bd_bottom_hearder_color {
-    border-bottom-left-radius: 14% solid #FF7000;
-    border-bottom-right-radius: 4% solid #FF7000;
-    box-shadow: 2px 4px 14px 8px #FF7000;
+    border-bottom: 4px solid #FF7000;
 }
 
 .btn-login {
@@ -11260,4 +11259,45 @@ main {
     color: #fff;
     background-color: #00A388;
     border-color: #00A388
+}
+
+
+/*!
+* 
+* GENERAL FOOTER
+* BG COLOR color #023047
+* 
+*/
+
+.footer {
+    width: 100%;
+    height: auto;
+    border: 1px solid #023047;
+    color: white;
+    padding: 2rem;
+    display: flex;
+}
+
+.footer-bg {
+    background-color: #023047;
+}
+
+.part {
+    padding: 1rem;
+}
+
+.footer-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-end {
+    display: flex;
+    justify-content: flex-end;
 }
