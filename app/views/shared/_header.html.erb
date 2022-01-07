@@ -4,9 +4,10 @@
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 text-dark">Home</a></li>
-        <li><%= link_to "Formations", "#", class:'nav-link px-2 text-dark' %></li>
-        <li><%= link_to "Cours", "#", class:'nav-link px-2 text-dark' %></li>
+        <!--li><a href="#" class="nav-link px-2 text-dark">Home</a></li -->
+        <li><%= link_to "Home", root_path(), class:'nav-link px-2 text-dark' %></li>
+        <li><%= link_to "Formations", formations_path(), class:'nav-link px-2 text-dark' %></li>
+        <li><%= link_to "Cours", cours_path(), class:'nav-link px-2 text-dark' %></li>
         <li><%= link_to "Autres", "#", class:'nav-link px-2 text-dark' %></li>
         
       </ul>
