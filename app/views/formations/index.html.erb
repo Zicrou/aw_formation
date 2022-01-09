@@ -1,4 +1,21 @@
+<!-- div class="row" style="padding: 0.25rem; margin-bottom: 4rem; margin-left: 4px; width:99.99%;" -->
+
+  <div style="display:flex;justify-content:center;">
+    
+    <div class="card col-sm-3" style="margin-right: 2rem;">
+      <%= image_tag "SamplePNGImage_30mbmb", class:"card-img-top", alt:"Card image cap" %>
+      <!-- img class="card-img-top" src="..." alt="Card image cap" -->
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary"  style="background-color:#023047;">Go somewhere</a>
+      </div>
+    </div>
+
+  </div>
+
 <p id="notice"><%= notice %></p>
+<%= link_to 'New Formation', new_formation_path %>
 
 <h1>Formations</h1>
 
@@ -21,7 +38,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Formation', new_formation_path %>

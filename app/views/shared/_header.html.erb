@@ -17,8 +17,14 @@
       </form>
 
       <div class="text-end">
-        <button type="button" class="btn btn-login me-2">Login</button>
-        <button type="button" class="btn btn-danger">Deconnexion</button>
+      <%#= current_user.role == "guest_user" %>
+
+      <% if current_user.role == "guest_user" %>
+        <%= link_to "Se connecter", new_user_session_path(), class:'btn btn-login me-2' %>
+        <%= link_to "S'inscrire", new_user_registration_path(), class:'btn btn-login me-2' %>
+      <% else %>
+        <%= link_to "Se deconnecter", destroy_user_session_path,method: :delete, class:'btn btn-danger' %>
+      <% end %>
       </div>
     </div>
   </div>

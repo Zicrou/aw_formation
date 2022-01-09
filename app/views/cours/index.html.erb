@@ -1,29 +1,30 @@
+<div style="">
 <p id="notice"><%= notice %></p>
 
-<h1>Cours</h1>
+<!--h1>Cours</h1-->
 <%= current_user.role %>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Descriptin</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div style="display:flex;justify-content:center;">
 
-  <tbody>
     <% @cours.each do |cour| %>
-      <tr>
-        <td><%= cour.title %></td>
-        <td><%= cour.descriptin %></td>
-        <td><%= link_to 'Show', cour %></td>
-        <td><%= link_to 'Edit', edit_cour_path(cour) if logged_in?(:admin, :editor) %></td>
-        <td><%= link_to 'Destroy', cour, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :editor) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
+      <div class="card col-sm-3" style="margin-right: 2rem;">
+        <span class="card-img-top"><%= image_tag url_for(cour.thumbnail), class:"card-img-top"%></span>
+        <%#= image_tag "SamplePNGImage_30mbmb", class:"card-img-top", alt:"Card image cap" %>
+        <!-- img class="card-img-top" src="..." alt="Card image cap" -->
+        <div class="card-body">
+          <h5 class="card-title"><%= cour.title %></h5>
+          <p class="card-text"><%= cour.descriptin %>. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <%= link_to 'Show', cour, class:"btn btn-primary", style:"background-color:#023047;" %>
+          <%= link_to 'Edit', edit_cour_path(cour), class:"btn btn-primary", style:"background-color:#023047;"  if logged_in?(:admin, :editor) %>
+          <%= link_to 'Destroy', cour, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  if logged_in?(:admin, :editor) %>
+          <!--a href="#" class="btn btn-primary"  style="background-color:#023047;">Go somewhere</a -->
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
 <br>
 
 <%= link_to 'New Cour', new_cour_path %>
+
+</div>
